@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbd6ce;
+  padding: 10px 20px;
+}
+
+header .logo {
+  color: #013c4a;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+header .title {
+  color: #013c4a;
+  font-size: 1.8em;
+}
+
+header nav {
+  display: flex;
+  gap: 15px;
+}
+
+header nav a {
+  color: #013c4a;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 5px 10px;
+}
+
+header nav a:hover {
+  background-color: #49b8a5;
+  color: #fff;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #fbd6ce;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .subscribe {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+footer .subscribe input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+footer .subscribe button {
+  background-color: #49b8a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer .subscribe button:hover {
+  background-color: #013c4a;
+}
+
+footer .social-links {
+  margin-bottom: 20px;
+}
+
+footer nav {
+  display: flex;
+  gap: 15px;
+}
+
+footer nav a {
+  color: #013c4a;
+  text-decoration: none;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.promo-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-box {
+  width: 30%;
+  background-color: #013c4a;
+  color: #c5c3c3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.images-section {
+  display: flex;
+  gap: 20px;
+}
+
+.images-section img {
+  width: 48%;
+  border-radius: 10px;
+}
+
+.shopping-perks {
+  background-color: #e7a827;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  width: 60%;
+  margin: auto;
+}
+
+.categories > div {
+  background-color: #e7a827;
+  text-align: center;
+  padding: 20px 0;
+}

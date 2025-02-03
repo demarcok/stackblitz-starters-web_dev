@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC FITNESS</title>
+    <link rel="stylesheet" href="index_style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo"
+        ><img src="images/Logo.png" width="100"
+      /></a>
+      <div class="title">Welcome to ABC FITNESS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="community.html">Community</a>
+      </nav>
+    </header>
+
+    <div class="content">
+      <section class="section overview">
+        <h2>About ABC FITNESS</h2>
+        <p>
+          ABC FITNESS is dedicated to bringing you top-quality fitness products
+          and services. We focus on empowering your fitness journey with
+          creativity, innovation, and community engagement.
+        </p>
+      </section>
+
+      <section class="section promo-section">
+        <div class="promo-box">
+          <h3>Promo 1</h3>
+          <p>Get fit with our 20% off on gym memberships!</p>
+        </div>
+        <div class="promo-box">
+          <h3>Promo 2</h3>
+          <p>Buy any package, get a free water bottle!</p>
+        </div>
+        <div class="promo-box">
+          <h3>Promo 3</h3>
+          <p>Free shipping on orders over $50!</p>
+        </div>
+      </section>
+
+      <section class="section images-section">
+        <img src="images/Item1.PNG" alt="Product 1" />
+        <img src="images/Item2.PNG" alt="Product 2" />
+      </section>
+
+      <section class="section shopping-perks">
+        <h2>Shopping Perks</h2>
+        <p>
+          Enjoy exclusive discounts, fast shipping, and top-notch customer
+          service when shopping with ABC FITNESS!
+        </p>
+      </section>
+      <h2>Categories</h2>
+      <section class="section categories">
+        <div class="cat1">Equipment</div>
+        <div class="cat2">Apparel</div>
+        <div class="cat3">Supplements</div>
+        <div class="cat4">Accessories</div>
+        <div class="cat5">Gadgets</div>
+        <div class="cat6">Outdoor</div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="subscribe">
+        <form onsubmit="return subscribe();">
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank"
+          ><img src="images/facebook.png"
+        /></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><img src="images/twitter.png"
+        /></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><img src="images/instagram.png"
+        /></a>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="community.html">Community</a>
+      </nav>
+    </footer>
+
+    <script>
+      function subscribe() {
+        // Get the email value from an input element with id "email"
+        const email = document.getElementById('email').value.trim();
+
+        // Check if the email field is empty
+        if (email === '') {
+          alert('Please enter an email address.');
+          return false;
+        }
+
+        // Regular expression pattern for basic email validation
+        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailPattern.test(email)) {
+          alert('Please enter a valid email address.');
+          return false;
+        }
+
+        // If the input passes validation, continue with the subscription process
+        alert('Thank you for subscribing');
+        return true;
+      }
+    </script>
+  </body>
+</html>
