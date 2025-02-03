@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+	<link rel="stylesheet" href="gallery_style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="images/Logo.png" width="100"></a>
+        <div class="title">Gallery</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+    <div class="viewBtn">
+    <button class="view-cart">View Cart</button>
+    </div>
+    <div class="gallery">
+        <!-- Repeat this block for 9 items -->
+        <div class="gallery-item">
+            <img src="images/Item1.PNG" alt="Item 1">
+            <h3>ABC FITNESS BOTTLE</h3>
+            <p>High quality ABC exclusive water bottle</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/Item2.PNG" alt="Item 1">
+            <h3>ABC Workout Tee</h3>
+            <p>ABC Fitness Tee</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/item3.PNG" alt="Item 1">
+            <h3>ABC Workout Mat</h3>
+            <p>ABC Fitness Workout Mat</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IndividualKickboxing.png" alt="Item 1">
+            <h3>Item Name</h3>
+            <p>Individual Kickboxing</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IndividualPilates.png" alt="Item 1">
+            <h3>Individual Pilates</h3>
+            <p>Individual Pilates</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IndividualYoga.png" alt="Item 1">
+            <h3>Individual Yoga</h3>
+            <p>Individual Yoga</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/GroupKickboxing.png" alt="Item 1">
+            <h3>Group Kickboxing</h3>
+            <p>Group Kickboxing Session</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/GroupPilates.png" alt="Item 1">
+            <h3>Group Pilates</h3>
+            <p>Group Pilates Session</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="gallery-item">
+            <img src="images/GroupYoga.png" alt="Item 1">
+            <h3>Group Yoga</h3>
+            <p>Group Yoga Session</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- ... Add more items -->
+    </div>
+
+    <div class="modal" id="cart-modal">
+        <span class="close">&times;</span>
+        <h3>Shopping Cart</h3>
+        <ul id="cart-items"></ul>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="process-order">Process Order</button>
+    </div>
+
+    <footer>
+        <div class="subscribe">
+            <form onsubmit="return subscribe();">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+              </form>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="community.html">Community</a>
+        </nav>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png"></a>
+        </div>
+        <nav>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </nav>
+    </footer>
+
+    <script>
+        const cartModal = document.getElementById('cart-modal');
+        const viewCartButton = document.querySelector('.view-cart');
+        const closeModal = document.querySelector('.modal .close');
+        const clearCartButton = document.getElementById('clear-cart');
+        const processOrderButton = document.getElementById('process-order');
+        const cartItems = document.getElementById('cart-items');
+
+        viewCartButton.addEventListener('click', () => {
+            cartModal.classList.add('active');
+            updateCart();
+        });
+
+        closeModal.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const item = e.target.parentElement.querySelector('h3').textContent;
+                let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+                cart.push(item);
+                sessionStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${item} added to cart!`);
+            });
+        });
+
+        clearCartButton.addEventListener('click', () => {
+            sessionStorage.removeItem('cart');
+            updateCart();
+            alert('Cart is cleared!');
+        });
+
+        processOrderButton.addEventListener('click', () => {
+            sessionStorage.removeItem('cart');
+            updateCart();
+            alert('Thank you for your order!');
+        });
+
+        document.getElementById('subscribe').addEventListener('click', () => {
+            alert('Thank you for subscribing!');
+        });
+
+        function updateCart() {
+            const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+            cartItems.innerHTML = cart.map(item => `<li>${item}</li>`).join('');
+        }
+        function subscribe() {
+            // Get the email value from an input element with id "email"
+            const email = document.getElementById('email').value.trim();
+            
+            // Check if the email field is empty
+            if (email === '') {
+                alert('Please enter an email address.');
+                return false;
+            }
+            
+            // Regular expression pattern for basic email validation
+            const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // If the input passes validation, continue with the subscription process
+            alert('Thank you for subscribing');
+            return true;
+        }
+    </script>
+</body>
+</html>

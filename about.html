@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ABC FITNESS</title>
+	<link rel="stylesheet" href="about_style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="images/Logo.png" width="100"></a>
+        <div class="title">About Us</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <section class="section">
+            <h2>About ABC FITNESS</h2>
+            <p>Welcome to ABC FITNESS, your one-stop solution for quality fitness products and personalized support. We're here to support your fitness journey every step of the way!</p>
+            <h3>Business Hours</h3>
+            <table class="business-hours">
+                <tr>
+                    <th>Day</th>
+                    <th>Opening Time</th>
+                    <th>Closing Time</th>
+                </tr>
+                <tr>
+                    <td>Monday - Friday</td>
+                    <td>9:00 AM</td>
+                    <td>8:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM</td>
+                    <td>6:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="text" id="phone" placeholder="Your Phone Number" required>
+                <textarea id="feedback" rows="5" placeholder="Your Feedback or Custom Order Information" required></textarea>
+                <label>
+                    <input type="checkbox" id="custom-order"> Custom Order
+                </label>
+                <button type="button" class="submit" onclick="submitForm()">Submit</button>
+                <button type="button" class="clear" onclick="clearForm()">Clear Form</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <div class="subscribe">
+            <form onsubmit="return subscribe();">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png"></a>  <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png"></a>  <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </footer>
+
+    <script>
+        function subscribe() {
+            // Get the email value from an input element with id "email"
+            const email = document.getElementById('email').value.trim();
+            
+            // Check if the email field is empty
+            if (email === '') {
+                alert('Please enter an email address.');
+                return false;
+            }
+            
+            // Regular expression pattern for basic email validation
+            const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // If the input passes validation, continue with the subscription process
+            alert('Thank you for subscribing');
+            return true;
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const feedback = document.getElementById('feedback').value;
+            const customOrder = document.getElementById('custom-order').checked;
+
+            if (name && email && phone && feedback) {
+                const formData = {
+                    name,
+                    email,
+                    phone,
+                    feedback,
+                    customOrder
+                };
+
+                localStorage.setItem('contactForm', JSON.stringify(formData));
+                alert(`Thank you for your message, ${name}`);
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('feedback').value = '';
+            document.getElementById('custom-order').checked = false;
+        }
+    </script>
+</body>
+</html>

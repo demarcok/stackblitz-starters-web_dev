@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Corner | ABC FITNESS</title>
+	<link rel="stylesheet" href="community_style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="images/Logo.png" width="100"></a>
+        <div class="title">Community Corner</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+    <main>
+        <section class="customer-spotlight section">
+            <h2>Customer Spotlight</h2>
+            <div class="border-box">
+                <p>"ABC FITNESS has transformed my fitness journey! Their community events are inspiring." - Jane Doe</p>
+            </div>
+            <div class="border-box">
+                <p>"I feel so connected to the community through ABC FITNESS." - John Smith</p>
+            </div>
+        </section>
+        <section class="community-involvement section">
+            <h2>Community Involvement</h2>
+            <div class="border-box">
+                <h3>Charity Run 2024</h3>
+                <p>Join us in our annual charity run to support local organizations!</p>
+            </div>
+            <div class="border-box">
+                <h3>Fitness for All Initiative</h3>
+                <p>Providing fitness programs for underprivileged communities.</p>
+            </div>
+        </section>
+        <section class="local-events section">
+            <h2>Local Events</h2>
+            <p>Stay tuned for upcoming events in your area. Check back often!</p>
+        </section>
+    </main>
+    <footer>
+        <div class="newsletter">
+            <form onsubmit="return subscribe();">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.png"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="images/instagram.png"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Us</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </footer>
+    <script>
+        function subscribe() {
+            // Get the email value from an input element with id "email"
+            const email = document.getElementById('email').value.trim();
+            
+            // Check if the email field is empty
+            if (email === '') {
+                alert('Please enter an email address.');
+                return false;
+            }
+            
+            // Regular expression pattern for basic email validation
+            const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // If the input passes validation, continue with the subscription process
+            alert('Thank you for subscribing');
+            return true;
+        }
+    </script>
+</body>
+</html>
