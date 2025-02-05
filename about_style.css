@@ -1,155 +1,160 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #c5c3c3;
+        }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FBD6CE;
-    padding: 10px 20px;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 10px 20px;
+        }
 
-header .logo {
-    color: #013C4A;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.5em;
-}
+        header .logo {
+            color: #013C4A;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
 
-header .title {
-    color: #013C4A;
-    font-size: 1.8em;
-}
+        header .title {
+            color: #c5c3c3;
+            font-size: 1.8em;
+        }
 
-header nav {
-    display: flex;
-    gap: 15px;
-}
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
 
-header nav a {
-    color: #013C4A;
-    text-decoration: none;
-    font-size: 1em;
-    padding: 5px 10px;
-}
+        header nav a {
+            color: #c5c3c3;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+        }
 
-header nav a:hover {
-    background-color: #49B8A5;
-    color: #fff;
-    border-radius: 5px;
-}
+        header nav a:hover {
+            background-color: #49B8A5;
+            color: #fff;
+            border-radius: 5px;
+        }
 
-footer {
-    background-color: #FBD6CE;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        footer {
+            background-color: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-footer .subscribe {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+        footer .subscribe {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
 
-footer .subscribe input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        footer .subscribe input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-footer .subscribe button {
-    background-color: #49B8A5;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        footer .subscribe button {
+            background-color: #AE232D;
+            color: #c5C3C3;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-footer .subscribe button:hover {
-    background-color: #013C4A;
-}
+        footer .subscribe button:hover {
+            background-color: #013C4A;
+        }
 
-footer .social-links {
-    margin-bottom: 20px;
-}
+        footer .social-links {
+            margin-bottom: 20px;
+        }
 
-footer nav {
-    display: flex;
-    gap: 15px;
-}
+        footer nav {
+            display: flex;
+            gap: 15px;
+        }
 
-footer nav a {
-    color: #013C4A;
-    text-decoration: none;
-}
+        footer nav a {
+            color: #c5C3C3;
+            text-decoration: none;
+        }
 
-footer nav a:hover {
-    text-decoration: underline;
-}
+        footer nav a:hover {
+            background-color: #49B8A5;
+            color: #fff;
+            border-radius: 5px;
+        }
 
-.content {
-    padding: 20px;
-}
+        .content {
+            padding: 20px;
+        }
 
-.section {
-    margin-bottom: 40px;
-}
+        .section {
+            margin-bottom: 40px;
+        }
 
-.business-hours {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
+        .business-hours {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
 
-.business-hours th, .business-hours td {
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 10px;
-}
+        .business-hours th, .business-hours td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: auto;
-}
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: auto;
+        }
 
-.contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-.contact-form button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .contact-form button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.contact-form .submit {
-    background-color: #49B8A5;
-    color: white;
-    border: none;
-}
+        .contact-form .submit {
+            background-color: #AE232D;
+            color: white;
+            border: none;
+        }
 
-.contact-form .submit:hover {
-    background-color: #013C4A;
-}
+        .contact-form .submit:hover {
+            background-color: #013C4A;
+        }
 
-.contact-form .clear {
-    background-color: #777777;
-    color: white;
-    border: none;
-}
+        .contact-form .clear {
+            background-color: #777777;
+            color: white;
+            border: none;
+        }
 
-.contact-form .clear:hover {
-    background-color: #555555;
-}
+        .contact-form .clear:hover {
+            background-color: #555555;
+        }
+    
